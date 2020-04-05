@@ -1,11 +1,10 @@
-from packages import yfinance as yf
+import imports as pkg
+import functions as fn
 
-#tickerSymbol = 'FB'
-#
-#tickerData = yf.Ticker(tickerSymbol)
-#
-#tickerDf = tickerData.history(period='1d', start='2010-1-1', end='2020-1-25')
-#
-#tickerDf
+ticker = "FB"
+tickerArr = ["FB", "AAPL", "TSLA", "TWTR", "SNAP", "BAC"]
+
+for i in range(len(tickerArr)):
+    fn.threeDayPercentage(tickerArr[i], 0)
 
 print("Let's see if this works!")
