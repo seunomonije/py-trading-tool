@@ -17,7 +17,7 @@ Must have homebrew installed<br />
 - `brew install ta-lib`
 - `pip install ta-lib`
 
-### General tools
-``pip install matplotlib`` (may be unnecessary)<br />
-``pip install numpy``<br />
-``pip install pandas``<br />
+#### General tools
+- `pip install matplotlib` (may be unnecessary)<br />
+- `pip install numpy`<br />
+- `pip install pandas`<br />
