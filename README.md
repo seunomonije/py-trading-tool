@@ -2,43 +2,23 @@
 Simple trading tool I created to help me make trading decisions
 
 ## trading tips
-https://www.youtube.com/watch?v=4R2CDbw4g88 <EMA vs SMA
-https://www.youtube.com/watch?v=5rMkQurfxrE <how to trade with moving averages
+https://www.youtube.com/watch?v=4R2CDbw4g88 <EMA vs SMA<br />
+https://www.youtube.com/watch?v=5rMkQurfxrE <how to trade with moving averages<br />
 
 ### Packages
-https://blog.quantinsti.com/install-ta-lib-python/#macos
+https://blog.quantinsti.com/install-ta-lib-python/#macos<br />
 
-Must have homebrew installed
+Must have homebrew installed<br />
 
 #### Finance
- `pip install yfinance`
+ `pip install yfinance`<br />
  
- TRASH FOR NOW
-`pip install zipline`
---zipline dependencies (must install first)
-    1st. link python to homebrew
-    `brew link python` and choose overwrite option if prompted
-   `brew install freetype pkg-config gcc openssl`
---anaconda dependencies for zipline
-  create new virtual environment
-  `conda create -n env_zipline python=3.5`
-   activate it
-  `conda activate env_zipline`
-   install zipline
-   `conda install -c Quantopian zipline`
-   END TRASH FOR NOW
-   
-   `pip install iexfinance`
-   `pip install pyEX`
-   
-
 #### Tech analysis
 
-`brew install ta-lib`
-`pip install ta-lib`
+`brew install ta-lib`<br />
+`pip install ta-lib`<br />
 
 ### General tools
-`pip install matplotlib` (may be unnecessary)
-`pip install numpy`
-`pip install pandas`
-`pip install pandas-datareader`
+`pip install matplotlib` (may be unnecessary)<br />
+`pip install numpy`<br />
+`pip install pandas`<br />
