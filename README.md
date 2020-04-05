@@ -1,6 +1,9 @@
 ## py-trading-tool
 Simple trading tool I created to help me make trading decisions
 
+## trading tips
+https://www.youtube.com/watch?v=4R2CDbw4g88
+
 ### Packages
 https://blog.quantinsti.com/install-ta-lib-python/#macos
 
