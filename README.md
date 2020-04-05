@@ -11,12 +11,11 @@ https://blog.quantinsti.com/install-ta-lib-python/#macos<br />
 Must have homebrew installed<br />
 
 #### Finance
- ``pip install yfinance``<br />
+- `pip install yfinance`
  
 #### Tech analysis
-
-``brew install ta-lib``<br />
-``pip install ta-lib``<br />
+- `brew install ta-lib`
+- `pip install ta-lib`
 
 ### General tools
 ``pip install matplotlib`` (may be unnecessary)<br />
