@@ -25,4 +25,4 @@ for i in range(len(tickerArr)):
     #run all my algorithms
     algos.threeDayEMAHelper(tickerArr[i], 1, data)
 
-print("Let's see if this works!")
+print("\nDone with analysis.\n")
