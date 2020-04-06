@@ -12,20 +12,39 @@ chmod +x exe.py
 - homebrew https://brew.sh/
 - pip `pip install -upgrade pip`
 
-## Packages
+## Required Packages
 
 #### Finance
-- yahoo finance `pip install yfinance`
+Install yahoo finance with 
+````
+pip install yfinance
+````
  
 #### Tech analysis
-- add ta-lib to homebrew with `brew install ta-lib`
-- install with `pip install ta-lib`
+Add TA-Lib to homebrew with:
+ ````
+ brew install ta-lib
+ ````
+Install TA-Lib with:
+````
+pip install ta-lib
+````
 
 #### General tools
-- matplotlib for graphs `pip install matplotlib`
-- numpy `pip install numpy`
-- pandas `pip install pandas`
+Install matplotlib for graphs:
+````
+pip install matplotlib
+````
+Install numpy for data manipulation:
+````
+pip install numpy
+````
+Install pandas for data manipulation:
+````
+pip install pandas
+````
 
+## Trading Resoures
 
 ##### Simple algorithm information that I use
 - https://www.youtube.com/watch?v=4R2CDbw4g88
