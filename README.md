@@ -16,33 +16,22 @@ chmod +x exe.py
 
 #### Finance
 ###### Install yahoo finance:
-````
-pip install yfinance
-````
+`pip install yfinance`
  
 #### Tech analysis
 ###### Add TA-Lib to homebrew:
- ````
- brew install ta-lib
- ````
+`brew install ta-lib`
+
 ###### Install TA-Lib with:
-````
-pip install ta-lib
-````
+`pip install ta-lib`
 
 #### General tools
 ###### Install matplotlib for graphs:
-````
-pip install matplotlib
-````
+`pip install matplotlib`
 ###### Install numpy for data manipulation:
-````
-pip install numpy
-````
+`pip install numpy`
 ###### Install pandas for data manipulation:
-````
-pip install pandas
-````
+`pip install pandas`
 
 ## Trading Resoures
 
