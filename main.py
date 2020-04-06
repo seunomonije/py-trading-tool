@@ -18,6 +18,11 @@ else:
     
 
 for i in range(len(tickerArr)):
-    algos.threeDayEMA(tickerArr[i], 0)
+
+    #download the data for each ticker
+    data = pkg.yf.download(tickerArr[i], period = "1y", interval = "1d")
+    
+    #run all my algorithms
+    algos.threeDayEMAHelper(tickerArr[i], 0, data)
 
 print("Let's see if this works!")

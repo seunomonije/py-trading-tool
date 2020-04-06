@@ -22,3 +22,11 @@ def stdinRead():
         exit()
     #return
     return ret
+    
+#    truncate(number, digits)
+#        truncates a number to a certain number of digits
+
+import math
+def truncate(number, digits) -> float:
+    stepper = 10.0 ** digits
+    return math.trunc(stepper * number) / stepper
