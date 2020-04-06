@@ -27,9 +27,13 @@ def buyAlertEMA(ticker, data):
     #talib calculations
     emaArr = pkg.talib.EMA(closeArr, timeperiod = 20)
     
-    if (emaArr[-1] - closeArr[-1] > -1) and (emaArr[-1] - closeArr[-1] < 0):
+    #see if the graphs are close but EMA is over
+    if (emaArr[-1]/closeArr[-1] < 1.01) and (emaArr[-1]/closeArr[-1] > 1) and (closeArr[-1] > closeArr[-2]):
+        val = emaArr[-1]/closeArr[-1]
+        print("\nval = %s \n" % val)
         print("\nALERT! %s is a potential purchase according to threeDayEMA. Here is some more info about the stock\n" % (ticker))
         return True
+        
     
 
 #   threeDayEMAbacktester(ticker, displayGraph)
@@ -60,11 +64,9 @@ def threeDayEMAbacktester(ticker, displayGraph, data):
     it = iter(range(len(emaArr)))
     for i in it:
         
-        #if the closing price surpasses the EMA over a 2 day period
-        if closeArr[i-1] < emaArr[i-1]:
-            if closeArr[i] > emaArr[i]:
-                    
-                    
+        #if the closing price approaches the EMA
+        if (emaArr[i]/closeArr[i] < 1.01) and (emaArr[i]/closeArr[i] > 1) and (closeArr[i] > closeArr[i-1]):
+
                 #first make sure you're not at the end of the data set
                 if (i+3 >= len(closeArr)):
                     break

@@ -23,6 +23,6 @@ for i in range(len(tickerArr)):
     data = pkg.yf.download(tickerArr[i], period = "1y", interval = "1d")
     
     #run all my algorithms
-    algos.threeDayEMAHelper(tickerArr[i], 0, data)
+    algos.threeDayEMAHelper(tickerArr[i], 1, data)
 
 print("Let's see if this works!")
