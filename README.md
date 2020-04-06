@@ -1,7 +1,12 @@
 # py-trading-tool
 
-Simple trading tool I created to help me make trading decisions
+Simple trading tool I created to help me make trading decisions and hopefully some of the boys can hop on.
 
+Root directory contains executable file exe.py loaded with preset stocks, which can be ran with
+````
+chmod +x exe.py
+./exe.py
+````
 ## Dependencies
 - python>=3.0
 - homebrew https://brew.sh/
@@ -10,22 +15,16 @@ Simple trading tool I created to help me make trading decisions
 ## Packages
 
 #### Finance
-````
- pip install yfinance
-````
+- yahoo finance `pip install yfinance`
  
 #### Tech analysis
-````
- brew install ta-lib
- pip install ta-lib
-````
+- add ta-lib to homebrew with `brew install ta-lib`
+- install with `pip install ta-lib`
 
 #### General tools
-````
- pip install matplotlib
- pip install numpy
- pip install pandas
-````
+- matplotlib for graphs `pip install matplotlib`
+- numpy `pip install numpy`
+- pandas `pip install pandas`
 
 
 ##### Simple algorithm information that I use
