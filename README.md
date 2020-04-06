@@ -38,6 +38,7 @@ chmod +x exe.py
 ##### Simple algorithm information that I use
 - https://www.youtube.com/watch?v=4R2CDbw4g88
 - https://www.youtube.com/watch?v=5rMkQurfxrE
+- https://www.youtube.com/watch?v=Kz6-8nQLRHM
 
 
 ##### Blogs that I read
