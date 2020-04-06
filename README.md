@@ -21,25 +21,25 @@ pip install yfinance
 ````
  
 #### Tech analysis
-##### Add TA-Lib to homebrew:
+###### Add TA-Lib to homebrew:
  ````
  brew install ta-lib
  ````
-##### Install TA-Lib with:
+###### Install TA-Lib with:
 ````
 pip install ta-lib
 ````
 
 #### General tools
-##### Install matplotlib for graphs:
+###### Install matplotlib for graphs:
 ````
 pip install matplotlib
 ````
-##### Install numpy for data manipulation:
+###### Install numpy for data manipulation:
 ````
 pip install numpy
 ````
-##### Install pandas for data manipulation:
+###### Install pandas for data manipulation:
 ````
 pip install pandas
 ````
