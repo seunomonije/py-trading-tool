@@ -1,7 +1,150 @@
 import imports as pkg
 import functions as fn
 
-#    threeDayEMAHelper(ticker)
+#    swingRSIHelper(ticker, displayGraph, data)
+#        helper function to consolidate buyAlertRSI and twoDayRSItester
+#        mainly created for download optimization
+def swingRSIHelper(ticker, displayGraph, data):
+
+    if (buyAlertRSI(ticker, data) == True):
+        swingRSItester(ticker, displayGraph, data)
+    else:
+        print("%s fails swingRSI" % (ticker))
+
+
+#     buyAlertRSI(ticker, data)
+#       signals if the given ticker is on buy alert for this day
+def buyAlertRSI(ticker, data):
+
+    #take out the closing price for each day
+    closeArr = data['Close'].to_numpy()
+    
+    #talib calculations
+    rsiArr = pkg.talib.RSI(closeArr, timeperiod = 10)
+    
+    #see if the graphs are close but EMA is over
+    if ((rsiArr[-1] < 25) and (rsiArr[-1] < rsiArr[-2] < rsiArr[-3])):
+        val = rsiArr[-1]
+        print("\nval = %s \n" % val)
+        print("\nALERT! %s is a potential purchase according to swingRSItester. Here is some more info about the stock\n" % (ticker))
+        return True
+    
+        
+#swingRSItester(ticker, displayGraph, data)
+#    prints the two day winning percentage of a given stock using RSI analysis with a 10 day time period
+
+def swingRSItester(ticker,displayGraph, data):
+
+    #taking out the closing price for each day
+    closeArr = data['Close'].to_numpy()
+
+    #uses talib to calculate the SMA and EMA
+    rsiArr = pkg.talib.RSI(closeArr, timeperiod = 10)
+    
+    
+    #initialize the wins and losses for this period
+    periodWins = 0
+    periodLosses = 0
+    
+    #for each RSI value
+    it = iter(range(len(rsiArr)))
+    for i in it:
+            
+        #error prevention
+        if (i-1 < 0 or i-2 < 0):
+            continue
+                
+        #if the rsi is approaching a global min
+        if ((rsiArr[i] < 25) and (rsiArr[i] < rsiArr[i-1] < rsiArr[i-2])):
+            #print("RSI30 is approaching a global minimum at x = %d, suggest buy" % i)
+            
+            ##initialize the counters
+            winners = 0
+            losers = 0
+            
+            ##evaluate stock price at checkpoints 1, 3, 7, 13, 21
+            at = iter(range(1,6))
+            for a in at:
+            
+                #1, 3, 7, 13, 21
+                const = 1+(a*(a-1))
+                        
+                #prevent looking too far ahead
+                if (i+const >= len(rsiArr)):
+                    break
+                            
+                #if the potential purchase price is less than the price at this index
+                if (closeArr[i] < closeArr[i+const]):
+                    
+                    #it's a winner
+                    print("%d day winner at x = %d" % (const, i))
+                    
+                    #add to the counter
+                    winners+=1
+                    
+                #otherwise
+                else:
+                    
+                    #it's a loser
+                    print("%d day loser at x = %d" % (const, i))
+                    
+                    #add to the counter
+                    losers+=1
+                    
+                #continue
+                continue
+                
+            #if this checkpoint is a winner
+            if winners > 0:
+                
+                #add to the total wins this period
+                periodWins+=1
+                
+                #print the number of days that it won
+                print("%s won on %s/%s days." % (ticker, winners, (winners+losers)))
+                
+            #otherwise if this checkpoint has no wins
+            elif winners == 0:
+            
+                #count it as a loss
+                periodLosses+=1
+                
+                #print it out the number of days that it won
+                print("%s won on %s/%s days." % (ticker, winners, (winners+losers)))
+        
+    #if there are any period wins
+    if periodWins > 0:
+        
+        #calculate the win rate
+        rate = fn.truncate(periodWins/(periodWins+periodLosses), 4)
+        
+        #print out the overall winrate
+        print("%s would have won at least one day in %s/%s past periods for a checkpoint win rate of %s" % (ticker, periodWins, periodWins+periodLosses, rate))
+    else:
+        print("There were no wins or no data in any past periods for %s" % ticker)
+
+    #if displayGraph is toggled
+    if displayGraph == 1:
+        
+        #tell the graph to keep the days in integer format
+        xi = list(range(len(closeArr)))
+        pkg.plt.xticks(xi, xi)
+        
+        #plot the closing prices
+        pkg.plt.plot(closeArr, 'o-', label = "Close" )
+        
+        #plot the EMA
+        pkg.plt.plot(rsiArr, 'o-', label = "RSI")
+
+        #display a legend
+        pkg.plt.legend()
+        
+        #display the graph
+        pkg.plt.show()
+            
+    
+
+#    threeDayEMAHelper(ticker, displayGraph, data)
 #        helper function to consolidate buyAlertEMA and threeDayEMAbacktester
 #        mainly created for download optimization
 
@@ -10,7 +153,7 @@ def threeDayEMAHelper(ticker, displayGraph, data):
     if (buyAlertEMA(ticker, data) == True):
         threeDayEMAbacktester(ticker, displayGraph, data)
     else:
-        print("%s is not a stock of interest for today" % (ticker))
+        print("%s fails threeDayEMA" % (ticker))
 
 
 #    buyAlertEMA(ticker)

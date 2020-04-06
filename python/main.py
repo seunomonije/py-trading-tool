@@ -24,5 +24,7 @@ for i in range(len(tickerArr)):
     
     #run all my algorithms
     algos.threeDayEMAHelper(tickerArr[i], 1, data)
+    algos.swingRSIHelper(tickerArr[i], 1, data)
+    
 
 print("\nDone with analysis.\n")
