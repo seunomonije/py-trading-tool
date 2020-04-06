@@ -2,10 +2,8 @@
 Simple trading tool I created to help me make trading decisions
 
 ### simple algorithms that I use
-
--EMA vs SMA and trading with moving averages
--- https://www.youtube.com/watch?v=4R2CDbw4g88 <- EMA vs SMA
--- https://www.youtube.com/watch?v=5rMkQurfxrE <- how to trade with moving averages
+- https://www.youtube.com/watch?v=4R2CDbw4g88
+- https://www.youtube.com/watch?v=5rMkQurfxrE
 
 
 ### blogs that I read
@@ -26,6 +24,6 @@ Simple trading tool I created to help me make trading decisions
 - `pip install ta-lib`
 
 #### General tools
-- `pip install matplotlib` (may be unnecessary)
+- `pip install matplotlib`
 - `pip install numpy`
 - `pip install pandas`
