@@ -1,14 +1,22 @@
 ## py-trading-tool
 Simple trading tool I created to help me make trading decisions
 
-## trading tips
-https://www.youtube.com/watch?v=4R2CDbw4g88 <EMA vs SMA<br />
-https://www.youtube.com/watch?v=5rMkQurfxrE <how to trade with moving averages<br />
+### simple algorithms that I use
 
-### Packages
-https://blog.quantinsti.com/install-ta-lib-python/#macos<br />
+-EMA vs SMA and trading with moving averages
+-- https://www.youtube.com/watch?v=4R2CDbw4g88 <- EMA vs SMA
+-- https://www.youtube.com/watch?v=5rMkQurfxrE <- how to trade with moving averages
 
-Must have homebrew installed<br />
+
+### blogs that I read
+- https://blog.quantinsti.com/install-ta-lib-python/#macos
+
+### Installations
+
+#### Dependencies
+- python>=3.0
+- homebrew https://brew.sh/
+- `pip install -upgrade pip`
 
 #### Finance
 - `pip install yfinance`
