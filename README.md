@@ -28,10 +28,10 @@ Simple trading tool I created to help me make trading decisions
 ````
 
 
-### simple algorithms that I use
+##### Simple algorithm information that I use
 - https://www.youtube.com/watch?v=4R2CDbw4g88
 - https://www.youtube.com/watch?v=5rMkQurfxrE
 
 
-### blogs that I read
+##### Blogs that I read
 - https://blog.quantinsti.com/install-ta-lib-python/#macos
