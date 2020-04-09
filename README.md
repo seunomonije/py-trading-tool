@@ -2,17 +2,32 @@
 
 Simple trading tool I created to help me make trading decisions and hopefully some of the boys can hop on.
 
+## React Native portion
+- start app with `yarn start`
+
+### Dependencies 
+
+- install expo `npm-install expo-cli --global` 
+- install AWS Amplify  https://aws-amplify.github.io/docs/js/tutorials/building-react-native-apps/
+
+
+
+### Expo
+- start expo in broswer with `cd pyTrader` then `expo start`
+
+
+## Python portion
 Root directory contains executable file exe.py loaded with preset stocks, which can be ran with
 ````
 chmod +x exe.py
 ./exe.py
 ````
-## Dependencies
+### Dependencies
 - python>=3.0
 - homebrew https://brew.sh/
 - pip `pip install -upgrade pip`
 
-## Required Packages
+### Required Packages
 
 #### Finance
 ###### Install yahoo finance:
@@ -33,7 +48,7 @@ chmod +x exe.py
 ###### Install pandas for data manipulation:
 `pip install pandas`
 
-## Trading Resoures
+### Trading Resoures
 
 ##### Simple algorithm information that I use
 - https://www.youtube.com/watch?v=4R2CDbw4g88
