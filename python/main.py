@@ -4,7 +4,7 @@ import functions as fn
 import algos
 
 tickerArr = []
-#if cmd-line arguments
+#if cmd-line arguments/Users/seunomonije/Desktop/Trading/py-trading-tool/python/main.py
 if (len(sys.argv) > 1):
 
     #copy the cmd-line arguments
@@ -24,7 +24,7 @@ for i in range(len(tickerArr)):
     
     #run all my algorithms
     algos.threeDayEMAHelper(tickerArr[i], 1, data)
-    algos.swingRSIHelper(tickerArr[i], 1, data)
+    algos.swingRSIHelper(tickerArr[i], 0, data)
     
 
 print("\nDone with analysis.\n")

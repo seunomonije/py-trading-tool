@@ -1,6 +1,16 @@
 import imports as pkg
 import functions as fn
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 #    swingRSIHelper(ticker, displayGraph, data)
 #        helper function to consolidate buyAlertRSI and twoDayRSItester
 #        mainly created for download optimization
@@ -9,7 +19,7 @@ def swingRSIHelper(ticker, displayGraph, data):
     if (buyAlertRSI(ticker, data) == True):
         swingRSItester(ticker, displayGraph, data)
     else:
-        print("%s fails swingRSI" % (ticker))
+        print(f"{bcolors.FAIL}%s -- swingRSI fail{bcolors.ENDC}" % (ticker))
 
 
 #     buyAlertRSI(ticker, data)
@@ -25,8 +35,9 @@ def buyAlertRSI(ticker, data):
     #see if the graphs are close but EMA is over
     if ((rsiArr[-1] < 25) and (rsiArr[-1] < rsiArr[-2] < rsiArr[-3])):
         val = rsiArr[-1]
-        print("\nval = %s \n" % val)
-        print("\nALERT! %s is a potential purchase according to swingRSItester. Here is some more info about the stock\n" % (ticker))
+        print(f"{bcolors.OKGREEN}%s -- swingRSI PASS{bcolors.ENDC}" % (ticker))
+        print("More info:\n")
+        print("\nval = %s\n" % val)
         return True
     
         
@@ -141,7 +152,6 @@ def swingRSItester(ticker,displayGraph, data):
         
         #display the graph
         pkg.plt.show()
-            
     
 
 #    threeDayEMAHelper(ticker, displayGraph, data)
@@ -153,7 +163,7 @@ def threeDayEMAHelper(ticker, displayGraph, data):
     if (buyAlertEMA(ticker, data) == True):
         threeDayEMAbacktester(ticker, displayGraph, data)
     else:
-        print("%s fails threeDayEMA" % (ticker))
+        print(f"{bcolors.FAIL}%s -- threeDayEMA fail{bcolors.ENDC}" % (ticker))
 
 
 #    buyAlertEMA(ticker)
@@ -173,8 +183,9 @@ def buyAlertEMA(ticker, data):
     #see if the graphs are close but EMA is over
     if (emaArr[-1]/closeArr[-1] < 1.01) and (emaArr[-1]/closeArr[-1] > 1) and (closeArr[-1] > closeArr[-2]):
         val = emaArr[-1]/closeArr[-1]
-        print("\nval = %s \n" % val)
-        print("\nALERT! %s is a potential purchase according to threeDayEMA. Here is some more info about the stock\n" % (ticker))
+        print(f"{bcolors.OKGREEN}%s -- threeDayEMA PASS{bcolors.ENDC}" % (ticker))
+        print("More info:\n")
+        print("\nval = %s\n" % val)
         return True
         
     
@@ -317,5 +328,4 @@ def threeDayEMAbacktester(ticker, displayGraph, data):
         
         #display the graph
         pkg.plt.show()
-
 
