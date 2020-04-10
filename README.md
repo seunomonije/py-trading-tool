@@ -8,7 +8,8 @@ Simple trading tool I created to help me make trading decisions and hopefully so
 ### Dependencies 
 
 - install expo `npm-install expo-cli --global` 
-- install AWS Amplify  https://aws-amplify.github.io/docs/js/tutorials/building-react-native-apps/
+- install heroku with installer @ https://devcenter.heroku.com/articles/heroku-cli#download-and-install or `brew tap heroku/brew && brew install heroku`
+
 
 
 
