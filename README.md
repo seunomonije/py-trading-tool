@@ -6,9 +6,11 @@ Simple trading tool I created to help me make trading decisions and hopefully so
 - start app with `yarn start`
 
 ### Dependencies 
-
+- allow npm to do it's job with `sudo chown -R $(whoami) ~/.npm`
 - install expo `npm-install expo-cli --global` 
-- install AWS Amplify  https://aws-amplify.github.io/docs/js/tutorials/building-react-native-apps/
+- initialize app with `npm install -g create-react-app`
+- install heroku with installer @ https://devcenter.heroku.com/articles/heroku-cli#download-and-install or `brew tap heroku/brew && brew install heroku`
+
 
 
 
