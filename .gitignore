@@ -1,3 +1,4 @@
 *.md
 react/
 exe.py
+env/

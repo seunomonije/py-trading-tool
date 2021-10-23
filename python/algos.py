@@ -18,8 +18,10 @@ def swingRSIHelper(ticker, displayGraph, data):
 
     if (buyAlertRSI(ticker, data) == True):
         swingRSItester(ticker, displayGraph, data)
+        return ticker
     else:
         print(f"{bcolors.FAIL}%s -- swingRSI fail{bcolors.ENDC}" % (ticker))
+        return 1
 
 
 #     buyAlertRSI(ticker, data)
@@ -45,7 +47,7 @@ def buyAlertRSI(ticker, data):
 #    prints the two day winning percentage of a given stock using RSI analysis with a 10 day time period
 
 def swingRSItester(ticker,displayGraph, data):
-
+    
     #taking out the closing price for each day
     closeArr = data['Close'].to_numpy()
 
@@ -162,8 +164,10 @@ def threeDayEMAHelper(ticker, displayGraph, data):
     
     if (buyAlertEMA(ticker, data) == True):
         threeDayEMAbacktester(ticker, displayGraph, data)
+        return ticker
     else:
         print(f"{bcolors.FAIL}%s -- threeDayEMA fail{bcolors.ENDC}" % (ticker))
+        return 1
 
 
 #    buyAlertEMA(ticker)

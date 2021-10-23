@@ -1,5 +1,8 @@
-#    stdinRead()
-#        Reads tickers from stdin
+import math
+
+"""
+    Reads tickers from stdin
+"""
 def stdinRead():
     
     #initialize return array
@@ -23,10 +26,9 @@ def stdinRead():
     #return
     return ret
     
-#    truncate(number, digits)
-#        truncates a number to a certain number of digits
-
-import math
+"""
+    Truncates a number to a designated number of digits
+"""
 def truncate(number, digits) -> float:
     stepper = 10.0 ** digits
     return math.trunc(stepper * number) / stepper

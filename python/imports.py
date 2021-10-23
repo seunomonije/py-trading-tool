@@ -20,6 +20,6 @@ from talib import abstract
 #Yahoo finance
 import yfinance as yf
 
-from pandas_datareader import data as pdr
+#from pandas_datareader import data as pdr
 
 
