@@ -1,5 +1,5 @@
-import imports as pkg
-import functions as fn
+from . import imports as pkg
+from . import functions as fn
 
 class bcolors:
     HEADER = '\033[95m'
@@ -164,10 +164,10 @@ def threeDayEMAHelper(ticker, displayGraph, data):
     
     if (buyAlertEMA(ticker, data) == True):
         threeDayEMAbacktester(ticker, displayGraph, data)
-        return ticker
+        return (ticker, data, 'WIN')
     else:
         print(f"{bcolors.FAIL}%s -- threeDayEMA fail{bcolors.ENDC}" % (ticker))
-        return 1
+        return (ticker, data, 'LOSE')
 
 
 #    buyAlertEMA(ticker)
